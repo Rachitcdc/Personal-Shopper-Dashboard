@@ -56,6 +56,33 @@ html.light .bar-fill{background:linear-gradient(90deg,rgba(92,153,0,.5),#5C9900)
 .theme-toggle:hover{border-color:var(--b2);color:var(--text);}
 /* Smooth theme transition */
 body,#topbar,.filter-bar,.kpi,.cc,.oc,.fc,.order-card,.lb-box,.tbl-wrap,.modal,.auth-card{transition:background .25s,border-color .25s,color .2s;}
+
+/* ── CUSTOMER AUTOFILL BANNER ── */
+#phoneAutofill{display:none;background:linear-gradient(135deg,rgba(191,255,0,.08),rgba(191,255,0,.04));border:1px solid rgba(191,255,0,.25);border-radius:9px;padding:11px 13px;margin-bottom:10px;grid-column:span 2;}
+.af-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.af-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);}
+.af-name{font-size:13px;font-weight:600;margin-bottom:1px;}
+.af-addr{font-size:11px;color:var(--m1);margin-bottom:7px;line-height:1.4;}
+.af-orders{font-size:10px;color:var(--m1);}
+.af-btn{padding:5px 13px;border-radius:5px;background:var(--lime);color:#000;font-size:11px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;transition:opacity .15s;}
+.af-btn:hover{opacity:.85;}
+.af-dismiss{background:transparent;border:none;color:var(--m1);font-size:16px;cursor:pointer;line-height:1;padding:0 4px;}
+
+/* ── CUSTOMER HISTORY IN DETAIL ── */
+.cust-history{margin-top:16px;padding-top:14px;border-top:1px solid var(--b1);}
+.ch-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--m1);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.ch-badge{background:var(--lime-dim);color:var(--lime);font-size:9px;padding:1px 7px;border-radius:3px;font-weight:700;}
+.ch-card{background:var(--g1);border:1px solid var(--b1);border-radius:8px;padding:9px 11px;margin-bottom:6px;cursor:pointer;transition:border-color .12s;}
+.ch-card:hover{border-color:var(--b2);}
+.ch-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;}
+.ch-card-id{font-size:9px;font-family:'DM Mono',monospace;color:var(--m1);}
+.ch-card-date{font-size:9px;color:var(--m1);}
+.ch-card-prod{font-size:11px;font-weight:500;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ch-card-foot{display:flex;justify-content:space-between;align-items:center;}
+.ch-card-amt{font-size:11px;font-weight:700;color:var(--lime);}
+.ch-total-spent{background:var(--lime-dim);border:1px solid rgba(191,255,0,.15);border-radius:7px;padding:7px 11px;margin-top:8px;display:flex;justify-content:space-between;align-items:center;}
+.ch-total-label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--m1);}
+.ch-total-val{font-size:14px;font-weight:700;color:var(--lime);}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:13px;-webkit-font-smoothing:antialiased;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;
@@ -337,6 +364,64 @@ input,select,textarea,button{font-family:'DM Sans',sans-serif;}
 /* ── TOAST ── */
 #toast{position:fixed;bottom:86px;right:26px;background:rgba(16,16,16,.97);border:1px solid var(--b2);border-radius:9px;padding:10px 16px;font-size:12px;color:var(--text);box-shadow:0 8px 30px rgba(0,0,0,.4);transform:translateY(16px);opacity:0;transition:all .22s;z-index:900;pointer-events:none;max-width:340px;}
 #toast.show{transform:translateY(0);opacity:1;}
+
+/* ── SEARCH BAR ── */
+.search-bar{display:flex;align-items:center;gap:10px;background:var(--g1);border:1px solid var(--b1);border-radius:var(--r);padding:10px 14px;margin-bottom:14px;transition:border-color .15s;}
+.search-bar:focus-within{border-color:rgba(191,255,0,.3);}
+.search-icon{font-size:14px;color:var(--m1);flex-shrink:0;}
+.search-input{flex:1;background:transparent;border:none;color:var(--text);font-size:13px;outline:none;font-family:'DM Sans',sans-serif;}
+.search-input::placeholder{color:var(--m1);}
+.search-clear{background:transparent;border:none;color:var(--m1);font-size:16px;cursor:pointer;padding:0 4px;line-height:1;transition:color .15s;display:none;}
+.search-clear:hover{color:var(--text);}
+.search-count{font-size:10px;color:var(--m1);white-space:nowrap;flex-shrink:0;}
+.search-highlight{background:rgba(191,255,0,.25);border-radius:2px;padding:0 1px;}
+html.light .search-highlight{background:rgba(92,153,0,.2);}
+
+/* ── DAILY CHECKLIST ── */
+.checklist-wrap{background:var(--g1);border:1px solid var(--b1);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;}
+.cl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.cl-title-row{display:flex;align-items:center;gap:10px;}
+.cl-title{font-size:13px;font-weight:600;}
+.cl-date{font-size:10px;color:var(--m1);font-family:'DM Mono',monospace;}
+.cl-reset{font-size:10px;color:var(--m1);cursor:pointer;background:transparent;border:none;text-decoration:underline;transition:color .15s;font-family:inherit;}
+.cl-reset:hover{color:var(--text);}
+.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.cl-item{background:var(--g2);border:1px solid var(--b1);border-radius:9px;padding:11px 13px;transition:all .15s;}
+.cl-item.done{background:rgba(191,255,0,.06);border-color:rgba(191,255,0,.2);}
+html.light .cl-item.done{background:rgba(92,153,0,.07);border-color:rgba(92,153,0,.25);}
+.cl-item-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.cl-check{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--b2);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .15s;}
+.cl-check.checked{background:var(--lime);border-color:var(--lime);}
+html.light .cl-check.checked{background:#5C9900;border-color:#5C9900;}
+.cl-check.checked::after{content:'✓';font-size:11px;font-weight:700;color:#000;}
+.cl-label{font-size:11px;font-weight:500;}
+.cl-count{font-size:22px;font-weight:700;color:var(--lime);line-height:1;margin-bottom:2px;}
+html.light .cl-count{color:#5C9900;}
+.cl-sub{font-size:9px;color:var(--m1);text-transform:uppercase;letter-spacing:.06em;}
+.cl-notes-row{display:flex;align-items:center;gap:8px;}
+.cl-notes{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--b1);color:var(--text);padding:7px 11px;border-radius:7px;font-size:11px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s;}
+.cl-notes:focus{border-color:rgba(191,255,0,.28);}
+html.light .cl-notes{background:rgba(0,0,0,.04);}
+.cl-save-btn{padding:7px 14px;background:var(--lime);color:#000;border:none;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;transition:opacity .15s;}
+html.light .cl-save-btn{background:#5C9900;color:#fff;}
+.cl-save-btn:hover{opacity:.85;}
+.cl-progress{height:3px;background:var(--b1);border-radius:2px;margin-top:10px;}
+.cl-progress-fill{height:100%;border-radius:2px;background:var(--lime);transition:width .3s;}
+html.light .cl-progress-fill{background:#5C9900;}
+
+/* ── TRACKING TAB ── */
+.track-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px;}
+.track-section{margin-bottom:14px;}
+.track-card{background:linear-gradient(135deg,rgba(160,123,212,.07),rgba(160,123,212,.02));border:1px solid rgba(160,123,212,.18);border-radius:var(--r);padding:12px;cursor:pointer;transition:border-color .15s;display:grid;grid-template-columns:1fr auto;gap:6px;align-items:start;}
+.track-card:hover{border-color:rgba(160,123,212,.35);}
+.track-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;}
+.tc-id{font-size:9px;font-family:'DM Mono',monospace;color:var(--m1);margin-bottom:2px;}
+.tc-name{font-size:13px;font-weight:500;margin-bottom:1px;}
+.tc-prod{font-size:11px;color:var(--m1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tc-amt{font-size:13px;font-weight:700;color:var(--lime);text-align:right;white-space:nowrap;}
+.tc-date{font-size:9px;color:var(--m1);text-align:right;}
+.no-track-badge{background:rgba(160,123,212,.1);color:#A07BD4;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:.04em;margin-top:4px;display:inline-block;}
+
 </style>
 </head>
 <body>
@@ -405,6 +490,7 @@ python -m http.server 8080</span>
       <div class="nav-pills">
         <button class="npill on" onclick="switchTab('orders',this)">Orders</button>
         <button class="npill" onclick="switchTab('datewise',this)">Date Wise</button>
+        <button class="npill" onclick="switchTab('tracking',this)">🚚 Tracking</button>
         <button class="npill" onclick="switchTab('leads',this)">Leads</button>
         <button class="npill" onclick="switchTab('eod',this)">EOD Report</button>
       </div>
@@ -413,7 +499,6 @@ python -m http.server 8080</span>
       <span class="status-dot" id="statusDot"></span>
       <span id="lastUpdate">—</span>
       <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" title="Toggle light/dark theme">🌙</button>
-      <button class="tbtn guide-btn" onclick="document.getElementById('setupGuide').style.display='flex'">📖 Guide</button>
       <button class="tbtn" onclick="loadData()">↻ Refresh</button>
       <button class="tbtn primary" onclick="openAdd()">+ New Order</button>
       <button class="tbtn" onclick="doSignOut()">Sign out</button>
@@ -455,6 +540,32 @@ python -m http.server 8080</span>
 
     <!-- ══ ORDERS PAGE ══ -->
     <div class="page on" id="page-orders">
+
+      <!-- Daily Checklist Widget -->
+      <div class="checklist-wrap" id="checklistWrap">
+        <div class="cl-header">
+          <div class="cl-title-row">
+            <span class="cl-title">📋 Daily Checklist</span>
+            <span class="cl-date" id="clDate"></span>
+          </div>
+          <button class="cl-reset" onclick="resetChecklist()">Reset</button>
+        </div>
+        <div class="cl-grid" id="clGrid"></div>
+        <div class="cl-notes-row">
+          <input class="cl-notes" id="clNotes" placeholder="Today's focus or notes…" oninput="saveChecklist()"/>
+          <button class="cl-save-btn" onclick="saveChecklist();toast('✓ Checklist saved')">Save</button>
+        </div>
+        <div class="cl-progress"><div class="cl-progress-fill" id="clBar" style="width:0%"></div></div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="searchInput" placeholder="Search by name, phone, product, order ID, city…" oninput="handleSearch(this.value)"/>
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+        <span class="search-count" id="searchCount"></span>
+      </div>
+
       <div class="kpi-row" id="kpiRow"></div>
       <div class="chart-r2">
         <div class="cc">
@@ -489,6 +600,28 @@ python -m http.server 8080</span>
       <div class="lb-section">
         <div class="sec-hdr"><div class="sec-title">Agent Leaderboard</div></div>
         <div class="lb-box"><table class="lb-table" id="lbTable"></table></div>
+      </div>
+    </div>
+
+    <!-- ══ TRACKING PAGE ══ -->
+    <div class="page" id="page-tracking">
+      <div class="track-kpi-row" id="trackKpi"></div>
+      <div class="track-section">
+        <div class="sec-hdr">
+          <div class="sec-title">
+            <span class="pulse-dot" style="background:#A07BD4;box-shadow:0 0 5px #A07BD4;"></span>
+            Placed Orders — Tracking ID Missing
+            <span class="fu-badge" id="trackBadge" style="background:rgba(160,123,212,.12);color:#A07BD4;">0</span>
+          </div>
+          <div style="font-size:10px;color:var(--m1);">These orders are placed but have no tracking ID — add it to complete the order</div>
+        </div>
+        <div class="track-grid" id="trackGrid"></div>
+      </div>
+      <div class="track-section">
+        <div class="sec-hdr"><div class="sec-title">All Placed Orders — With Tracking</div></div>
+        <div class="tbl-wrap" style="max-height:420px;">
+          <table class="main-table"><thead id="trackTableHead"></thead><tbody id="trackTableBody"></tbody></table>
+        </div>
       </div>
     </div>
 
@@ -562,8 +695,20 @@ python -m http.server 8080</span>
   <div class="modal" onclick="event.stopPropagation()">
     <h2>New Order</h2>
     <div class="mg">
+      <!-- Customer autofill banner -->
+      <div id="phoneAutofill">
+        <div class="af-top">
+          <span class="af-label">⚡ Returning Customer</span>
+          <button class="af-dismiss" onclick="document.getElementById('phoneAutofill').style.display='none'">×</button>
+        </div>
+        <div class="af-name" id="af-name"></div>
+        <div class="af-addr" id="af-addr"></div>
+        <div class="af-orders" id="af-orders"></div>
+        <button class="af-btn" onclick="autofillCustomer()" style="margin-top:8px;">↙ Autofill Name & Address</button>
+      </div>
       <div class="fi s2"><label>Customer Name *</label><input id="o-name" placeholder="Arjun Mehta"/></div>
-      <div class="fi"><label>Phone *</label><input id="o-phone" placeholder="9810001111"/></div>
+      <div class="fi"><label>Phone * <span style="font-size:9px;color:var(--m1);">(auto-lookup)</span></label>
+        <input id="o-phone" placeholder="9810001111" oninput="lookupPhone(this.value)"/></div>
       <div class="fi"><label>City</label><select id="o-city"><option>Delhi</option><option>Mumbai</option><option>Hyderabad</option><option>Pre Order</option></select></div>
       <div class="fi s2"><label>Full Address</label><input id="o-addr" placeholder="42 Saket, New Delhi – 110017"/></div>
       <div class="fi"><label>Area / Location</label><input id="o-loc" placeholder="Saket, Bandra…"/></div>
@@ -776,6 +921,7 @@ function gisLoaded(){
       document.getElementById('fab').style.display='flex';
       document.getElementById('eDate').value=new Date().toISOString().slice(0,10);
       populateAgents();
+      renderChecklist(); // Init daily checklist
       await loadData();
       refreshTimer=setInterval(loadData,90000);
     }
@@ -801,6 +947,7 @@ function switchTab(name,btn){
   if(name==='datewise') renderDateWise();
   if(name==='leads')    renderLeads();
   if(name==='eod')      renderEOD();
+  if(name==='tracking') renderTracking();
 }
 
 // ══ DATE FILTER ══
@@ -903,7 +1050,17 @@ async function loadData(){
   }
 }
 
-function renderAll(){renderKPIs();renderCharts();renderFollowUp();renderPipeline();renderOrdersTable();renderLeaderboard();}
+function renderAll(){
+  renderKPIs();renderCharts();renderFollowUp();renderPipeline();renderOrdersTable();renderLeaderboard();
+  // Update tracking badge in nav without full render
+  const noTrack=allOrders.filter(o=>o.orderStatus==='Placed'&&(!o.trackId||o.trackId.trim()===''||o.trackId.trim()==='—'));
+  const tb=document.getElementById('trackBadge');if(tb)tb.textContent=noTrack.length;
+  // Restore search results if search is active
+  if(searchActive){
+    const q=document.getElementById('searchInput')?.value||'';
+    handleSearch(q);
+  }
+}
 
 // ══ KPIs ══
 function renderKPIs(){
@@ -1177,6 +1334,19 @@ function setLeadFilter(val,btn){
 // ══ ORDER DETAIL ══
 function openDetail(id){
   const o=allOrders.find(x=>x.id===id);if(!o)return;
+
+  // Find all orders from same phone number
+  const phone=o.phone.replace(/\D/g,'');
+  const history=allOrders
+    .filter(x=>x.phone.replace(/\D/g,'')===phone && x.id!==o.id)
+    .sort((a,b)=>{
+      const da=parseDate(a.date),db=parseDate(b.date);
+      return (db&&da)?(db-da):0;
+    });
+  const totalSpent=allOrders
+    .filter(x=>x.phone.replace(/\D/g,'')===phone && x.payStatus==='Paid')
+    .reduce((s,x)=>s+x.total,0);
+
   const fields=[
     ['Order ID',o.id,''],['Date',fmtDate(o.date),''],
     ['Customer',o.customer,''],['Phone',o.phone,''],
@@ -1193,6 +1363,31 @@ function openDetail(id){
     ['Tracking',o.trackId||'—',''],
     ['Notes',o.notes||'—','s2'],
   ];
+
+  const historyHtml = history.length===0 ? '' : `
+    <div class="cust-history">
+      <div class="ch-title">
+        Customer Order History
+        <span class="ch-badge">${history.length} previous order${history.length>1?'s':''}</span>
+      </div>
+      ${history.map(h=>`
+        <div class="ch-card" onclick="closeDetail();setTimeout(()=>openDetail('${esc(h.id)}'),80)">
+          <div class="ch-card-top">
+            <span class="ch-card-id">${h.id}</span>
+            <span class="ch-card-date">${fmtDate(h.date)}</span>
+          </div>
+          <div class="ch-card-prod">${h.product}${h.size?' — '+h.size:''}</div>
+          <div class="ch-card-foot">
+            <span class="ch-card-amt">₹${(h.total||0).toLocaleString('en-IN')}</span>
+            <span>${pillHtml(h.orderStatus)}&nbsp;${pillHtml(h.payStatus)}</span>
+          </div>
+        </div>`).join('')}
+      ${totalSpent>0?`<div class="ch-total-spent">
+        <span class="ch-total-label">Total spent (paid orders)</span>
+        <span class="ch-total-val">₹${totalSpent.toLocaleString('en-IN')}</span>
+      </div>`:''}
+    </div>`;
+
   document.getElementById('detailBody').innerHTML=`
     <h2 style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
       <span style="font-family:'DM Mono',monospace;font-size:14px;">${o.id}</span>
@@ -1210,6 +1405,7 @@ function openDetail(id){
     <select class="stat-sel" onchange="updateField('${esc(o.id)}',${o._row},'K',this.value)">
       ${PAYMENT_STATUSES.map(s=>`<option ${s===o.payStatus?'selected':''}>${s}</option>`).join('')}
     </select>
+    ${historyHtml}
     <div class="mbt" style="margin-top:13px;"><button class="btn-ghost" onclick="closeDetail()">Close</button></div>`;
   document.getElementById('detailModal').classList.add('open');
 }
@@ -1267,14 +1463,272 @@ function getNextOrderId(){
   return 'PS'+(maxNum+1);
 }
 
+// ══ GLOBAL SEARCH ══
+let searchActive=false;
+let searchResults=[];
+
+function handleSearch(q){
+  const clr=document.getElementById('searchClear');
+  const cnt=document.getElementById('searchCount');
+  q=q.trim().toLowerCase();
+  if(!q){
+    searchActive=false; searchResults=[];
+    if(clr)clr.style.display='none';
+    if(cnt)cnt.textContent='';
+    // Restore normal filtered view
+    renderKPIs(); renderCharts(); renderFollowUp(); renderPipeline(); renderOrdersTable(); renderLeaderboard();
+    return;
+  }
+  searchActive=true;
+  if(clr)clr.style.display='block';
+  searchResults=allOrders.filter(o=>{
+    return [o.customer,o.phone,o.product,o.id,o.city,o.agent,o.barcode,o.trackId,o.notes]
+      .some(v=>(v||'').toLowerCase().includes(q));
+  });
+  if(cnt)cnt.textContent=searchResults.length+' result'+(searchResults.length!==1?'s':'');
+  renderSearchResults(q);
+}
+
+function clearSearch(){
+  const inp=document.getElementById('searchInput');
+  if(inp)inp.value='';
+  handleSearch('');
+}
+
+function hl(text,q){
+  if(!q||!text) return text||'';
+  const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return String(text).replace(re,'<mark class="search-highlight">$1</mark>');
+}
+
+function renderSearchResults(q){
+  // Show results in the orders table area, hide charts
+  document.getElementById('ordHead').innerHTML=`<tr>
+    <th>Date</th><th>Order ID</th><th>Agent</th><th>Customer</th>
+    <th>Product</th><th>Size</th><th>City</th>
+    <th>Total</th><th>Payment</th><th>Order Status</th>
+  </tr>`;
+  document.getElementById('ordBody').innerHTML=searchResults.length===0
+    ?`<tr><td colspan="10" style="text-align:center;color:var(--m1);padding:24px;">No results found</td></tr>`
+    :searchResults.map(o=>`
+      <tr onclick="openDetail('${esc(o.id)}')" style="cursor:pointer;">
+        <td class="mono">${fmtDate(o.date)}</td>
+        <td class="mono">${hl(o.id,q)}</td>
+        <td>${hl(o.agent,q)}</td>
+        <td>${hl(o.customer,q)}</td>
+        <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;">${hl(o.product,q)}</td>
+        <td>${o.size}</td>
+        <td>${hl(o.city,q)}</td>
+        <td class="bold-lime">₹${(o.total||0).toLocaleString('en-IN')}</td>
+        <td>${pillHtml(o.payStatus)}</td>
+        <td>${pillHtml(o.orderStatus)}</td>
+      </tr>`).join('');
+}
+
+// ══ DAILY CHECKLIST ══
+const CL_KEY='cdc-checklist';
+const CL_ITEMS=[
+  {id:'leads',   label:'Leads to Follow Up',  icon:'📞'},
+  {id:'payment', label:'Payments to Chase',    icon:'💸'},
+  {id:'dispatch',label:'Orders to Dispatch',   icon:'📦'},
+  {id:'tracking',label:'Add Tracking IDs',     icon:'🚚'},
+  {id:'eod',     label:'EOD Report Filed',     icon:'📋'},
+  {id:'wachat',  label:'WA Chats Cleared',     icon:'💬'},
+];
+
+function getTodayKey(){return new Date().toISOString().slice(0,10);}
+
+function loadChecklist(){
+  const today=getTodayKey();
+  const raw=localStorage.getItem(CL_KEY);
+  if(!raw) return {date:today,checks:{},counts:{},notes:''};
+  const saved=JSON.parse(raw);
+  // Auto-reset if it's a new day
+  if(saved.date!==today) return {date:today,checks:{},counts:{},notes:''};
+  return saved;
+}
+function saveChecklist(){
+  const today=getTodayKey();
+  const data={date:today,checks:{},counts:{},notes:document.getElementById('clNotes')?.value||''};
+  CL_ITEMS.forEach(item=>{
+    data.checks[item.id]=document.getElementById('cl-check-'+item.id)?.classList.contains('checked')||false;
+    data.counts[item.id]=document.getElementById('cl-count-'+item.id)?.value||'';
+  });
+  localStorage.setItem(CL_KEY,JSON.stringify(data));
+  updateClProgress(data);
+}
+function resetChecklist(){
+  localStorage.removeItem(CL_KEY);
+  renderChecklist();
+  toast('Checklist reset for today');
+}
+function toggleCheck(id){
+  const el=document.getElementById('cl-check-'+id);
+  const card=el?.closest('.cl-item');
+  if(!el)return;
+  el.classList.toggle('checked');
+  card?.classList.toggle('done',el.classList.contains('checked'));
+  saveChecklist();
+}
+function updateClProgress(data){
+  const total=CL_ITEMS.length;
+  const done=CL_ITEMS.filter(i=>data.checks[i.id]).length;
+  const pct=Math.round(done/total*100);
+  const bar=document.getElementById('clBar');
+  if(bar)bar.style.width=pct+'%';
+}
+function renderChecklist(){
+  const today=getTodayKey();
+  const d=new Date();
+  const dateStr=d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
+  const el=document.getElementById('clDate');
+  if(el)el.textContent=dateStr;
+  const data=loadChecklist();
+  const grid=document.getElementById('clGrid');
+  if(!grid)return;
+  grid.innerHTML=CL_ITEMS.map(item=>{
+    const checked=data.checks[item.id]||false;
+    const countVal=data.counts[item.id]||'';
+    return`<div class="cl-item ${checked?'done':''}" id="cl-card-${item.id}">
+      <div class="cl-item-top">
+        <div class="cl-check ${checked?'checked':''}" id="cl-check-${item.id}" onclick="toggleCheck('${item.id}')"></div>
+        <span class="cl-label">${item.icon} ${item.label}</span>
+      </div>
+      <input type="number" class="cl-notes" id="cl-count-${item.id}"
+        placeholder="count" value="${countVal}" min="0"
+        style="width:60px;padding:4px 8px;font-size:12px;"
+        oninput="saveChecklist()" onclick="event.stopPropagation()"/>
+    </div>`;
+  }).join('');
+  const notesEl=document.getElementById('clNotes');
+  if(notesEl)notesEl.value=data.notes||'';
+  updateClProgress(data);
+}
+
+// ══ TRACKING PAGE ══
+function renderTracking(){
+  // Orders that are "Placed" but have no tracking ID
+  const placed=allOrders.filter(o=>o.orderStatus==='Placed');
+  const noTrack=placed.filter(o=>!o.trackId||o.trackId.trim()===''||o.trackId.trim()==='—');
+  const hasTrack=placed.filter(o=>o.trackId&&o.trackId.trim()!==''&&o.trackId.trim()!=='—');
+
+  // KPIs
+  const totalPlaced=placed.length;
+  const paidNoTrack=noTrack.filter(o=>o.payStatus==='Paid').length;
+  const valNoTrack=noTrack.reduce((s,o)=>s+o.total,0);
+  const K=[
+    {l:'Placed Orders',v:totalPlaced,s:'total placed'},
+    {l:'Missing Tracking',v:noTrack.length,s:'need tracking ID',warn:noTrack.length>0},
+    {l:'Paid — No Tracking',v:paidNoTrack,s:'urgent — paid but no track'},
+    {l:'Value at Risk',v:fmt(valNoTrack),s:'untracked order value'},
+  ];
+  document.getElementById('trackKpi').innerHTML=K.map(k=>`
+    <div class="kpi ${k.warn?'':''}">
+      <div class="kpi-lbl">${k.l}</div>
+      <div class="kpi-val" style="${k.warn?'color:var(--c-notplaced);':''}">${k.v}</div>
+      <div class="kpi-sub">${k.s}</div>
+    </div>`).join('');
+
+  document.getElementById('trackBadge').textContent=noTrack.length;
+
+  // Cards for missing tracking
+  document.getElementById('trackGrid').innerHTML=noTrack.length===0
+    ?'<div style="font-size:12px;color:var(--m1);padding:14px 0;">✅ All placed orders have tracking IDs — great work!</div>'
+    :noTrack.map(o=>`
+      <div class="track-card" onclick="openDetail('${esc(o.id)}')">
+        <div>
+          <div class="tc-id">${o.id} · ${o.agent}</div>
+          <div class="tc-name">${o.customer}</div>
+          <div class="tc-prod">${o.product}${o.size?' — '+o.size:''}</div>
+          <span class="no-track-badge">No Tracking</span>
+          <div style="font-size:10px;color:var(--m1);margin-top:4px;">📍 ${o.city} · ${o.phone}</div>
+        </div>
+        <div>
+          <div class="tc-amt">₹${(o.total||0).toLocaleString('en-IN')}</div>
+          <div class="tc-date">${fmtDate(o.date)}</div>
+          ${pillHtml(o.payStatus)}
+        </div>
+      </div>`).join('');
+
+  // Full placed orders table
+  document.getElementById('trackTableHead').innerHTML=`<tr>
+    <th>Date</th><th>Order ID</th><th>Agent</th><th>Customer</th>
+    <th>Product</th><th>City</th><th>Total</th>
+    <th>Payment</th><th>Tracking ID</th><th>Courier</th>
+  </tr>`;
+  document.getElementById('trackTableBody').innerHTML=placed.length===0
+    ?`<tr><td colspan="10" style="text-align:center;color:var(--m1);padding:20px;">No placed orders yet</td></tr>`
+    :placed.sort((a,b)=>{
+        const da=parseDate(a.date),db=parseDate(b.date);
+        return(db&&da)?(db-da):0;
+      }).map(o=>`
+      <tr onclick="openDetail('${esc(o.id)}')" style="cursor:pointer;">
+        <td class="mono">${fmtDate(o.date)}</td>
+        <td class="mono">${o.id}</td>
+        <td>${o.agent}</td><td>${o.customer}</td>
+        <td style="max-width:140px;overflow:hidden;text-overflow:ellipsis;">${o.product}</td>
+        <td>${o.city}</td>
+        <td class="bold-lime">₹${(o.total||0).toLocaleString('en-IN')}</td>
+        <td>${pillHtml(o.payStatus)}</td>
+        <td class="mono" style="${!o.trackId||o.trackId==='—'?'color:var(--c-notplaced);font-weight:600;':''}">${o.trackId||'⚠ MISSING'}</td>
+        <td style="color:var(--m1);">${o.courier||'—'}</td>
+      </tr>`).join('');
+}
+
+// ══ PHONE LOOKUP — autofill in New Order form ══
+let _afMatch = null; // stores matched customer record
+
+function lookupPhone(val){
+  const clean=val.replace(/\D/g,'');
+  const banner=document.getElementById('phoneAutofill');
+  if(clean.length<8){banner.style.display='none';_afMatch=null;return;}
+  // Find most recent order with this phone
+  const matches=allOrders
+    .filter(o=>o.phone.replace(/\D/g,'')===clean)
+    .sort((a,b)=>{const da=parseDate(a.date),db=parseDate(b.date);return(db&&da)?(db-da):0;});
+  if(matches.length===0){banner.style.display='none';_afMatch=null;return;}
+  _afMatch=matches[0];
+  document.getElementById('af-name').textContent=_afMatch.customer;
+  document.getElementById('af-addr').textContent=
+    (_afMatch.address||'No address saved')+(_afMatch.city?' · '+_afMatch.city:'');
+  document.getElementById('af-orders').textContent=
+    matches.length+' previous order'+(matches.length>1?'s':'')+
+    ' · Last: '+fmtDate(_afMatch.date)+
+    ' · Total spent: ₹'+matches.filter(o=>o.payStatus==='Paid').reduce((s,o)=>s+o.total,0).toLocaleString('en-IN');
+  banner.style.display='block';
+}
+
+function autofillCustomer(){
+  if(!_afMatch) return;
+  const set=(id,val)=>{const el=document.getElementById(id);if(el&&val)el.value=val;};
+  set('o-name', _afMatch.customer);
+  set('o-addr', _afMatch.address);
+  set('o-loc',  _afMatch.location);
+  // Set city dropdown
+  const cityEl=document.getElementById('o-city');
+  if(cityEl&&_afMatch.city){
+    for(let i=0;i<cityEl.options.length;i++){
+      if(cityEl.options[i].value===_afMatch.city){cityEl.selectedIndex=i;break;}
+    }
+  }
+  document.getElementById('phoneAutofill').style.display='none';
+  toast('✓ Autofilled from '+_afMatch.customer+'\'s last order');
+}
+
 // ══ ADD ORDER ══
 function openAdd(){
-  // Ensure agent dropdown is set to default
   const ag=document.getElementById('o-agent');
-  if(ag)ag.value=DEFAULT_AGENT;
+  if(ag) ag.value=DEFAULT_AGENT;
+  // Reset autofill banner
+  document.getElementById('phoneAutofill').style.display='none';
+  _afMatch=null;
   document.getElementById('addModal').classList.add('open');
 }
-function closeAdd(){document.getElementById('addModal').classList.remove('open');}
+function closeAdd(){
+  document.getElementById('addModal').classList.remove('open');
+  document.getElementById('phoneAutofill').style.display='none';
+  _afMatch=null;
+}
 
 async function saveOrder(){
   const name=(document.getElementById('o-name').value||'').trim();
