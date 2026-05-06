@@ -98,19 +98,6 @@ input,select,textarea,button{font-family:'DM Sans',sans-serif;}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ld-msg{font-size:11px;color:var(--m1);letter-spacing:.05em;text-align:center;max-width:300px;line-height:1.6;}
 
-/* ── SETUP GUIDE ── */
-#setupGuide{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:9998;align-items:center;justify-content:center;overflow-y:auto;padding:20px;}
-.sg-box{background:rgba(16,16,16,.97);border:1px solid var(--b2);border-radius:18px;padding:30px 34px;max-width:640px;width:100%;box-shadow:0 40px 100px rgba(0,0,0,.6);}
-.sg-box h2{font-size:18px;font-weight:600;margin-bottom:6px;}
-.sg-sub{font-size:12px;color:var(--m1);margin-bottom:22px;line-height:1.6;}
-.sg-warn{background:rgba(240,165,0,.07);border:1px solid rgba(240,165,0,.2);border-radius:8px;padding:11px 14px;font-size:11px;color:var(--c-pending);margin-bottom:20px;line-height:1.6;}
-.sg-step{display:flex;gap:13px;margin-bottom:16px;align-items:flex-start;}
-.sg-num{width:26px;height:26px;border-radius:50%;background:var(--lime);color:#000;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-.sg-title{font-size:13px;font-weight:600;margin-bottom:3px;}
-.sg-desc{font-size:11px;color:var(--m1);line-height:1.6;}
-.sg-code{font-family:'DM Mono',monospace;background:rgba(255,255,255,.06);border:1px solid var(--b1);border-radius:6px;padding:8px 12px;font-size:11px;margin-top:6px;color:#BFFF00;display:block;white-space:pre-wrap;word-break:break-all;}
-.sg-btn{width:100%;padding:12px;border-radius:9px;border:none;cursor:pointer;background:var(--lime);color:#000;font-size:13px;font-weight:700;margin-top:16px;transition:opacity .15s;}
-.sg-btn:hover{opacity:.87;}
 
 /* ── AUTH ── */
 #authScreen{display:none;position:fixed;inset:0;background:var(--bg);z-index:9000;align-items:center;justify-content:center;}
@@ -120,8 +107,6 @@ input,select,textarea,button{font-family:'DM Sans',sans-serif;}
 .auth-card p{font-size:12px;color:var(--m1);line-height:1.7;margin-bottom:24px;}
 #authBtn{width:100%;padding:13px;border-radius:9px;border:none;cursor:pointer;background:var(--lime);color:#000;font-size:13px;font-weight:700;letter-spacing:.02em;transition:opacity .15s,transform .1s;}
 #authBtn:hover{opacity:.87;}#authBtn:active{transform:scale(.98);}
-.auth-link{display:block;margin-top:14px;font-size:11px;color:var(--m1);cursor:pointer;transition:color .15s;}
-.auth-link:hover{color:var(--lime);}
 
 /* ── TOPBAR ── */
 #topbar{position:sticky;top:0;z-index:500;background:rgba(5,5,5,.92);backdrop-filter:blur(26px);border-bottom:1px solid var(--b1);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;}
@@ -377,37 +362,6 @@ input,select,textarea,button{font-family:'DM Sans',sans-serif;}
 .search-highlight{background:rgba(191,255,0,.25);border-radius:2px;padding:0 1px;}
 html.light .search-highlight{background:rgba(92,153,0,.2);}
 
-/* ── DAILY CHECKLIST ── */
-.checklist-wrap{background:var(--g1);border:1px solid var(--b1);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;}
-.cl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.cl-title-row{display:flex;align-items:center;gap:10px;}
-.cl-title{font-size:13px;font-weight:600;}
-.cl-date{font-size:10px;color:var(--m1);font-family:'DM Mono',monospace;}
-.cl-reset{font-size:10px;color:var(--m1);cursor:pointer;background:transparent;border:none;text-decoration:underline;transition:color .15s;font-family:inherit;}
-.cl-reset:hover{color:var(--text);}
-.cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
-.cl-item{background:var(--g2);border:1px solid var(--b1);border-radius:9px;padding:11px 13px;transition:all .15s;}
-.cl-item.done{background:rgba(191,255,0,.06);border-color:rgba(191,255,0,.2);}
-html.light .cl-item.done{background:rgba(92,153,0,.07);border-color:rgba(92,153,0,.25);}
-.cl-item-top{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
-.cl-check{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--b2);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .15s;}
-.cl-check.checked{background:var(--lime);border-color:var(--lime);}
-html.light .cl-check.checked{background:#5C9900;border-color:#5C9900;}
-.cl-check.checked::after{content:'✓';font-size:11px;font-weight:700;color:#000;}
-.cl-label{font-size:11px;font-weight:500;}
-.cl-count{font-size:22px;font-weight:700;color:var(--lime);line-height:1;margin-bottom:2px;}
-html.light .cl-count{color:#5C9900;}
-.cl-sub{font-size:9px;color:var(--m1);text-transform:uppercase;letter-spacing:.06em;}
-.cl-notes-row{display:flex;align-items:center;gap:8px;}
-.cl-notes{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--b1);color:var(--text);padding:7px 11px;border-radius:7px;font-size:11px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s;}
-.cl-notes:focus{border-color:rgba(191,255,0,.28);}
-html.light .cl-notes{background:rgba(0,0,0,.04);}
-.cl-save-btn{padding:7px 14px;background:var(--lime);color:#000;border:none;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;transition:opacity .15s;}
-html.light .cl-save-btn{background:#5C9900;color:#fff;}
-.cl-save-btn:hover{opacity:.85;}
-.cl-progress{height:3px;background:var(--b1);border-radius:2px;margin-top:10px;}
-.cl-progress-fill{height:100%;border-radius:2px;background:var(--lime);transition:width .3s;}
-html.light .cl-progress-fill{background:#5C9900;}
 
 /* ── TRACKING TAB ── */
 .track-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px;}
@@ -432,44 +386,6 @@ html.light .cl-progress-fill{background:#5C9900;}
   <div class="ld-msg" id="ldMsg">Initialising…</div>
 </div>
 
-<!-- SETUP GUIDE -->
-<div id="setupGuide" onclick="if(event.target===this)this.style.display='none'">
-  <div class="sg-box">
-    <h2>🛠 How to Run This Dashboard</h2>
-    <p class="sg-sub">Follow these steps once. After that, just open the file and sign in every day.</p>
-    <div class="sg-warn">⚠ Step 1 is one-time only. After completing it, you only need Steps 4 & 5 each day.</div>
-    <div class="sg-step"><div class="sg-num">1</div><div>
-      <div class="sg-title">Enable Google Sheets API & Authorise Origin</div>
-      <div class="sg-desc">Go to <strong>console.cloud.google.com</strong> → your project → APIs &amp; Services → Library → enable <strong>Google Sheets API</strong>.<br>Then: Credentials → your OAuth 2.0 Client → Authorised JavaScript origins → add:</div>
-      <span class="sg-code">http://localhost:8080</span>
-      <div class="sg-desc" style="margin-top:6px;">Click Save.</div>
-    </div></div>
-    <div class="sg-step"><div class="sg-num">2</div><div>
-      <div class="sg-title">Add "Daily Summary" and "Leads" Tabs to Your Sheet</div>
-      <div class="sg-desc">In your Google Sheet click <strong>+</strong> at the bottom twice and create tabs named <em>exactly</em>:</div>
-      <span class="sg-code">Daily Summary
-Leads</span>
-    </div></div>
-    <div class="sg-step"><div class="sg-num">3</div><div>
-      <div class="sg-title">Save the HTML File to Your Desktop</div>
-      <span class="sg-code">C:\Users\crm1\Desktop\Personal_Shopper_Dashboard.html</span>
-    </div></div>
-    <div class="sg-step"><div class="sg-num">4</div><div>
-      <div class="sg-title">Open CMD and Start the Local Server</div>
-      <div class="sg-desc">Press <strong>Win + R</strong> → type <strong>cmd</strong> → Enter. Then:</div>
-      <span class="sg-code">cd Desktop
-python -m http.server 8080</span>
-      <div class="sg-desc" style="margin-top:6px;">Keep this window open. Install Python from python.org if needed (free).</div>
-    </div></div>
-    <div class="sg-step"><div class="sg-num">5</div><div>
-      <div class="sg-title">Open in Chrome & Sign In</div>
-      <span class="sg-code">http://localhost:8080/Personal_Shopper_Dashboard.html</span>
-      <div class="sg-desc" style="margin-top:6px;">Sign in with your Crepdog Crew Google account → data loads automatically!</div>
-    </div></div>
-    <button class="sg-btn" onclick="document.getElementById('setupGuide').style.display='none'">Close Guide</button>
-  </div>
-</div>
-
 <!-- AUTH -->
 <div id="authScreen">
   <div class="auth-card">
@@ -477,7 +393,6 @@ python -m http.server 8080</span>
     <h1>Personal Shopper</h1>
     <p>Sign in with your Crepdog Crew Google account to access the live order dashboard.</p>
     <button id="authBtn">Continue with Google →</button>
-    <span class="auth-link" onclick="document.getElementById('setupGuide').style.display='flex'">📖 First time? View setup guide</span>
   </div>
 </div>
 
@@ -540,23 +455,6 @@ python -m http.server 8080</span>
 
     <!-- ══ ORDERS PAGE ══ -->
     <div class="page on" id="page-orders">
-
-      <!-- Daily Checklist Widget -->
-      <div class="checklist-wrap" id="checklistWrap">
-        <div class="cl-header">
-          <div class="cl-title-row">
-            <span class="cl-title">📋 Daily Checklist</span>
-            <span class="cl-date" id="clDate"></span>
-          </div>
-          <button class="cl-reset" onclick="resetChecklist()">Reset</button>
-        </div>
-        <div class="cl-grid" id="clGrid"></div>
-        <div class="cl-notes-row">
-          <input class="cl-notes" id="clNotes" placeholder="Today's focus or notes…" oninput="saveChecklist()"/>
-          <button class="cl-save-btn" onclick="saveChecklist();toast('✓ Checklist saved')">Save</button>
-        </div>
-        <div class="cl-progress"><div class="cl-progress-fill" id="clBar" style="width:0%"></div></div>
-      </div>
 
       <!-- Search Bar -->
       <div class="search-bar">
@@ -921,7 +819,6 @@ function gisLoaded(){
       document.getElementById('fab').style.display='flex';
       document.getElementById('eDate').value=new Date().toISOString().slice(0,10);
       populateAgents();
-      renderChecklist(); // Init daily checklist
       await loadData();
       refreshTimer=setInterval(loadData,90000);
     }
@@ -1523,86 +1420,6 @@ function renderSearchResults(q){
         <td>${pillHtml(o.payStatus)}</td>
         <td>${pillHtml(o.orderStatus)}</td>
       </tr>`).join('');
-}
-
-// ══ DAILY CHECKLIST ══
-const CL_KEY='cdc-checklist';
-const CL_ITEMS=[
-  {id:'leads',   label:'Leads to Follow Up',  icon:'📞'},
-  {id:'payment', label:'Payments to Chase',    icon:'💸'},
-  {id:'dispatch',label:'Orders to Dispatch',   icon:'📦'},
-  {id:'tracking',label:'Add Tracking IDs',     icon:'🚚'},
-  {id:'eod',     label:'EOD Report Filed',     icon:'📋'},
-  {id:'wachat',  label:'WA Chats Cleared',     icon:'💬'},
-];
-
-function getTodayKey(){return new Date().toISOString().slice(0,10);}
-
-function loadChecklist(){
-  const today=getTodayKey();
-  const raw=localStorage.getItem(CL_KEY);
-  if(!raw) return {date:today,checks:{},counts:{},notes:''};
-  const saved=JSON.parse(raw);
-  // Auto-reset if it's a new day
-  if(saved.date!==today) return {date:today,checks:{},counts:{},notes:''};
-  return saved;
-}
-function saveChecklist(){
-  const today=getTodayKey();
-  const data={date:today,checks:{},counts:{},notes:document.getElementById('clNotes')?.value||''};
-  CL_ITEMS.forEach(item=>{
-    data.checks[item.id]=document.getElementById('cl-check-'+item.id)?.classList.contains('checked')||false;
-    data.counts[item.id]=document.getElementById('cl-count-'+item.id)?.value||'';
-  });
-  localStorage.setItem(CL_KEY,JSON.stringify(data));
-  updateClProgress(data);
-}
-function resetChecklist(){
-  localStorage.removeItem(CL_KEY);
-  renderChecklist();
-  toast('Checklist reset for today');
-}
-function toggleCheck(id){
-  const el=document.getElementById('cl-check-'+id);
-  const card=el?.closest('.cl-item');
-  if(!el)return;
-  el.classList.toggle('checked');
-  card?.classList.toggle('done',el.classList.contains('checked'));
-  saveChecklist();
-}
-function updateClProgress(data){
-  const total=CL_ITEMS.length;
-  const done=CL_ITEMS.filter(i=>data.checks[i.id]).length;
-  const pct=Math.round(done/total*100);
-  const bar=document.getElementById('clBar');
-  if(bar)bar.style.width=pct+'%';
-}
-function renderChecklist(){
-  const today=getTodayKey();
-  const d=new Date();
-  const dateStr=d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
-  const el=document.getElementById('clDate');
-  if(el)el.textContent=dateStr;
-  const data=loadChecklist();
-  const grid=document.getElementById('clGrid');
-  if(!grid)return;
-  grid.innerHTML=CL_ITEMS.map(item=>{
-    const checked=data.checks[item.id]||false;
-    const countVal=data.counts[item.id]||'';
-    return`<div class="cl-item ${checked?'done':''}" id="cl-card-${item.id}">
-      <div class="cl-item-top">
-        <div class="cl-check ${checked?'checked':''}" id="cl-check-${item.id}" onclick="toggleCheck('${item.id}')"></div>
-        <span class="cl-label">${item.icon} ${item.label}</span>
-      </div>
-      <input type="number" class="cl-notes" id="cl-count-${item.id}"
-        placeholder="count" value="${countVal}" min="0"
-        style="width:60px;padding:4px 8px;font-size:12px;"
-        oninput="saveChecklist()" onclick="event.stopPropagation()"/>
-    </div>`;
-  }).join('');
-  const notesEl=document.getElementById('clNotes');
-  if(notesEl)notesEl.value=data.notes||'';
-  updateClProgress(data);
 }
 
 // ══ TRACKING PAGE ══
